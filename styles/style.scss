@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&display=swap');
+@import "vars";
+
+body{
+    margin: 0;
+    padding: 0;
+}
+.inactive{
+    display: none;
+}
+.navbar{
+    background-color: $chui-grey;
+    height: 100px;
+    display: grid;
+    grid-template-columns: 10fr 1fr;
+    grid-template-areas: "logo-chui menu-icon";
+    align-items: center;
+    text-align: center;
+    box-shadow: $box-shadow-navbar;
+    padding: 0 12px;
+        
+        .navbar-top{
+            position: absolute;
+            top: 99px;
+            background-color: #ebe6e4;
+            display: block;
+            width: 100vw;
+            height: 100vh;
+            z-index: 10;
+            ul{
+                text-decoration: none;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                list-style-type: none;
+            }
+            li{
+                margin-top: 30px;
+                font-family: $gral-font;
+                font-weight: 300;
+                border-bottom: 1px solid;
+                &:hover{
+                    color: white;
+                    cursor: pointer;
+                }
+            }
+        }
+        
+        
+        .facebook-icon, .instagram-icon {
+            display: none;
+        }
+        
+        .logo-chuii{
+            grid-area: logo-chui;
+            img{
+                width: 100px;
+                height: 100px;
+            }
+        }
+        
+        .menu-icon{
+            margin-right: 10px;
+            grid-area: menu-icon;
+            cursor: pointer;
+        }
+        
+}
+
+/* Banner */
+
+.banner {
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 0;
+}
+
+
+/*Sabores*/
+
+.sabores{
+    margin-top: 55px;
+    text-align: center;
+    h2{
+        color: grey;
+        font-family: $gral-font;
+        font-size: 22px;
+      
+    }
+}
+
+
+/* Footer */

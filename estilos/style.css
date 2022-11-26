@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&display=swap");
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.inactive {
+  display: none;
+}
+
+.navbar {
+  background-color: #ebe6e4;
+  height: 100px;
+  display: grid;
+  grid-template-columns: 10fr 1fr;
+  grid-template-areas: "logo-chui menu-icon";
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+  padding: 0 12px;
+}
+.navbar nav {
+  position: absolute;
+  top: 99px;
+  background-color: #ebe6e4;
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+}
+.navbar nav ul {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+}
+.navbar nav li {
+  margin-top: 30px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  border-bottom: 1px solid;
+}
+.navbar nav li:hover {
+  color: white;
+  cursor: pointer;
+}
+.navbar .facebook-icon, .navbar .instagram-icon {
+  display: none;
+}
+.navbar .logo-chuii {
+  grid-area: logo-chui;
+}
+.navbar .logo-chuii img {
+  width: 100px;
+  height: 100px;
+}
+.navbar .menu-icon {
+  margin-right: 10px;
+  grid-area: menu-icon;
+  cursor: pointer;
+}
+
+/* Banner */
+.banner {
+  width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 0;
+}
+
+/*Sabores*/
+.sabores {
+  margin-top: 55px;
+  text-align: center;
+}
+.sabores h2 {
+  color: grey;
+  font-family: "Montserrat", sans-serif;
+  font-size: 22px;
+}
+
+/* Footer *//*# sourceMappingURL=style.css.map */
