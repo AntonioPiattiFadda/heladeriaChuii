@@ -6,9 +6,18 @@ body{
     padding: 0;
 }
 .inactive{
-    display: none;
+    transform: translateX(100vw);
 }
 
+// Ver como hacer el negro de fondo cuando aparece la navbar.
+/*.blackout{
+    display: block;
+    top: 99px;
+    background-color: black;
+    width: 100vw;
+    height: 500vw;
+    
+}*/
 
 
 .navbar{
@@ -22,6 +31,10 @@ body{
     box-shadow: $box-shadow-navbar;
     padding: 0 12px;
         .navbar-top{
+            display: none;
+        }
+        .navbar-top-mobile{
+            transition: .9s ease-in-out all;
             position: absolute;
             top: 99px;
             background-color: #ebe6e4;
@@ -47,7 +60,7 @@ body{
                 &:after {
                     display:block;
                     content: '';
-                    border-bottom: solid 3px grey;  
+                    border-bottom: solid 3px $chui-lightblue;  
                     transform: scaleX(0);  
                     transition: transform 250ms ease-in-out;
                   }
@@ -57,10 +70,20 @@ body{
                     color: grey;
                 }
             }
+            .redes-navbar-mobile {
+                a{
+                    text-decoration: none;
+                }
+                img{
+                margin: 32px 5px;
+                width: 24px;
+                height: 24px;
+            }}
         }
+
         
-        .facebook-icon, .instagram-icon {
-            display: none;
+        .redes-navbar {
+           display: none;
         }
         
         .logo-chuii{
@@ -78,9 +101,7 @@ body{
         }
         
 }
-.inactive{
-    display: none;
-}
+
 /* Banner */
 
 .banner {
@@ -118,6 +139,13 @@ body{
             width: 100%;
             object-fit: cover;
             border: solid 1px $chui-grey;
+            opacity: 0;
+            transform: translateX(100px);
+            transition: .7s ease-in-out all;
+        }
+        .visible {
+            opacity: 1;
+            transform: translateX(0);
         }
         h3{
             margin: 12px;
@@ -132,15 +160,80 @@ body{
 
 /* Instagram */
 
-.instagram{
+.seccion-instagram{
     margin-top: 55px;
     text-align: center;
     h2{
         color: grey;
         font-family: $gral-font;
         font-size: 22px;
-    }        
+    }       
+    .seccion-instagram_header{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        h4{ 
+            margin: 0;
+        }
+    } 
+    img{
+        width: 28px;
+    }
 }
+
+.post-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(100px, 293px));
+    justify-content: center;
+    grid-gap: 28px;
+    margin: 24px 0;
+  }
+  .post {
+    cursor: pointer;
+    position: relative;
+    display: block;
+  }
+  .post-image {
+    margin: 0;
+  }
+  .post-image img {
+    width: 100%;
+    vertical-align: top;
+  }
+  .post-overlay {
+    background: rgba(0,0,0, .4);
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+  }
+  .post:hover .post-overlay{
+              display: flex;
+  }
+  
+  .post-like,
+  .post-comments {
+    width: 80px;
+    margin: 5px;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .post-list {
+      grid-gap: 3px;
+    }
+  }
+
+  
 
 /* Novedades */
 .contacto-novedades{
@@ -190,7 +283,7 @@ body{
             &:after {
                 display:block;
                 content: '';
-                border-bottom: solid 3px grey;  
+                border-bottom: solid 3px $chui-lightblue;  
                 transform: scaleX(0);  
                 transition: transform 250ms ease-in-out;
               }
@@ -208,9 +301,27 @@ body{
             width: 24px;
             height: 24px;
         }
+        a{
+            text-decoration: none;
+        }
     }
     
 }
+
+/* Locales */
+
+.mapaGoogle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 24px 0;
+    iframe{
+        width: 80%;
+        
+    }
+    
+}
+
 
 
 /* Contactos */
@@ -220,19 +331,19 @@ body{
     align-items: center;
     justify-content: center;
     h1{
-        margin: 24px;
+        margin: 48px;
         font-family: $gral-font;
     }
     p{
-        width: 80%;
+        width: 50%;
         margin-bottom: 24px;
         font-family: $gral-font;
         text-align: center;
     }
     .ImagenContacto{
-        width: 150px;
-        height: 150px;
-        border-radius: 10px;
+        margin: 32px;
+        width: 50%;
+        height: auto;
     }
 }
 
@@ -250,10 +361,40 @@ body{
             transition-property: background-color;
             transition-duration: 0.5s;
             &:hover {
-                background-color: lightgrey;
+                background-color: #43c7e7;
              }
         }
     }
     
     
 }
+
+// Abri tu local
+
+.fraseAbriTuLocal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    h1{
+        margin: 48px;
+        font-family: $gral-font;
+    }
+    p{
+        width: 50%;
+        margin-bottom: 24px;
+        font-family: $gral-font;
+        text-align: center;
+    }
+    .ImagenAbriTuLocal{
+        margin: 32px;
+        width: 50%;
+        height: auto;
+    }
+}
+
+
+
+
+
+@import 'mediaQuerys';

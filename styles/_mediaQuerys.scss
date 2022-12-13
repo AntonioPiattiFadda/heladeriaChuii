@@ -1,0 +1,81 @@
+@media(min-width:780px){
+    .navbar{
+        
+        grid-template-columns: auto 1fr auto auto;
+        grid-template-areas: "logo-chui . navbar-top redes";
+        justify-content: center;
+        align-items: center;
+
+        .navbar-top{
+            grid-area: navbar-top;
+            display: flex;
+            background-color: #ebe6e4;
+            nav{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            ul{
+                text-decoration: none;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                
+            }
+            li{
+                font-family: $gral-font;
+                font-weight: 300;
+                margin-right: 18px;
+                &:hover{
+                    cursor: pointer;
+                }
+                &:after {
+                    display:block;
+                    content: '';
+                    border-bottom: solid 3px $chui-lightblue;  
+                    transform: scaleX(0);  
+                    transition: transform 250ms ease-in-out;
+                  }
+                &:hover:after { transform: scaleX(1); }
+                a {
+                    text-decoration: none;
+                    color: grey;
+                }
+            }
+           
+        }
+    
+            .redes-navbar {
+               display: flex;
+               flex-direction: row;
+               grid-area: redes;
+               a{
+                text-decoration: none;
+               }
+               img{
+                width: 24px;
+                height: 24px;
+                margin-right: 5px;
+               }
+            }
+            
+            .logo-chuii{
+                grid-area: logo-chui;
+                padding-left: 12px;
+                img{
+                    width: 100px;
+                    height: 100px;
+                }
+            }
+            
+            .menu-icon{
+                display: none;
+            }
+            
+    }
+
+}

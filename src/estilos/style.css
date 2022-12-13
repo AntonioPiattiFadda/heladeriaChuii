@@ -1,0 +1,450 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&display=swap");
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.inactive {
+  transform: translateX(100vw);
+}
+
+/*.blackout{
+    display: block;
+    top: 99px;
+    background-color: black;
+    width: 100vw;
+    height: 500vw;
+
+}*/
+.navbar {
+  background-color: #ebe6e4;
+  height: 100px;
+  display: grid;
+  grid-template-columns: 10fr 1fr;
+  grid-template-areas: "logo-chui menu-icon";
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+  padding: 0 12px;
+}
+.navbar .navbar-top {
+  display: none;
+}
+.navbar .navbar-top-mobile {
+  transition: 0.9s ease-in-out all;
+  position: absolute;
+  top: 99px;
+  background-color: #ebe6e4;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+}
+.navbar .navbar-top-mobile ul {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+}
+.navbar .navbar-top-mobile li {
+  margin-top: 45px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+}
+.navbar .navbar-top-mobile li:hover {
+  cursor: pointer;
+}
+.navbar .navbar-top-mobile li:after {
+  display: block;
+  content: "";
+  border-bottom: solid 3px #43c7e7;
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out;
+}
+.navbar .navbar-top-mobile li:hover:after {
+  transform: scaleX(1);
+}
+.navbar .navbar-top-mobile li a {
+  text-decoration: none;
+  color: grey;
+}
+.navbar .navbar-top-mobile .redes-navbar-mobile a {
+  text-decoration: none;
+}
+.navbar .navbar-top-mobile .redes-navbar-mobile img {
+  margin: 32px 5px;
+  width: 24px;
+  height: 24px;
+}
+.navbar .redes-navbar {
+  display: none;
+}
+.navbar .logo-chuii {
+  grid-area: logo-chui;
+}
+.navbar .logo-chuii img {
+  width: 100px;
+  height: 100px;
+}
+.navbar .menu-icon {
+  margin-right: 10px;
+  grid-area: menu-icon;
+  cursor: pointer;
+}
+
+/* Banner */
+.banner {
+  width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 0;
+}
+
+/*Sabores*/
+.sabores {
+  margin-top: 55px;
+  text-align: center;
+}
+.sabores h2 {
+  color: grey;
+  font-family: "Montserrat", sans-serif;
+  font-size: 22px;
+}
+
+.galeria-sabores {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.galeria-sabores .text-center {
+  margin: 36px;
+  width: 200px;
+  height: 200px;
+}
+.galeria-sabores .text-center .rounded {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: solid 1px #ebe6e4;
+  opacity: 0;
+  transform: translateX(100px);
+  transition: 0.7s ease-in-out all;
+}
+.galeria-sabores .text-center .visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+.galeria-sabores .text-center h3 {
+  margin: 12px;
+  color: grey;
+  font-family: "Montserrat", sans-serif;
+}
+.galeria-sabores .arrow-left, .galeria-sabores .arrow-right {
+  display: none;
+}
+
+/* Instagram */
+.seccion-instagram {
+  margin-top: 55px;
+  text-align: center;
+}
+.seccion-instagram h2 {
+  color: grey;
+  font-family: "Montserrat", sans-serif;
+  font-size: 22px;
+}
+.seccion-instagram .seccion-instagram_header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.seccion-instagram .seccion-instagram_header h4 {
+  margin: 0;
+}
+.seccion-instagram img {
+  width: 28px;
+}
+
+.post-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(100px, 293px));
+  justify-content: center;
+  grid-gap: 28px;
+  margin: 24px 0;
+}
+
+.post {
+  cursor: pointer;
+  position: relative;
+  display: block;
+}
+
+.post-image {
+  margin: 0;
+}
+
+.post-image img {
+  width: 100%;
+  vertical-align: top;
+}
+
+.post-overlay {
+  background: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+.post:hover .post-overlay {
+  display: flex;
+}
+
+.post-like,
+.post-comments {
+  width: 80px;
+  margin: 5px;
+  font-weight: bold;
+  text-align: center;
+  display: inline-block;
+}
+
+@media screen and (max-width: 768px) {
+  .post-list {
+    grid-gap: 3px;
+  }
+}
+/* Novedades */
+.contacto-novedades {
+  margin-top: 55px;
+  text-align: center;
+}
+.contacto-novedades h2 {
+  color: grey;
+  font-family: "Montserrat", sans-serif;
+  font-size: 22px;
+}
+
+/* Footer */
+.footer {
+  background-color: #ebe6e4;
+}
+.footer .derechos-autor {
+  padding: 20px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.footer .derechos-autor .logo-chuii {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 5px;
+}
+.footer .navbar-footer {
+  display: flex;
+  justify-content: center;
+}
+.footer .navbar-footer ul {
+  text-decoration: none;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+.footer .navbar-footer li {
+  margin-top: 30px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+}
+.footer .navbar-footer li:hover {
+  cursor: pointer;
+}
+.footer .navbar-footer li:after {
+  display: block;
+  content: "";
+  border-bottom: solid 3px #43c7e7;
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out;
+}
+.footer .navbar-footer li:hover:after {
+  transform: scaleX(1);
+}
+.footer .navbar-footer li a {
+  text-decoration: none;
+  color: grey;
+}
+.footer .redes {
+  text-align: center;
+  padding: 24px;
+}
+.footer .redes .instagram-icon, .footer .redes .facebook-icon {
+  width: 24px;
+  height: 24px;
+}
+.footer .redes a {
+  text-decoration: none;
+}
+
+/* Locales */
+.mapaGoogle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 24px 0;
+}
+.mapaGoogle iframe {
+  width: 80%;
+}
+
+/* Contactos */
+.contacto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.contacto h1 {
+  margin: 48px;
+  font-family: "Montserrat", sans-serif;
+}
+.contacto p {
+  width: 50%;
+  margin-bottom: 24px;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+}
+.contacto .ImagenContacto {
+  margin: 32px;
+  width: 50%;
+  height: auto;
+}
+
+.formulario {
+  width: 100%;
+  height: auto;
+}
+.formulario .form-container {
+  margin: 32px;
+}
+.formulario .form-container .form-control {
+  margin-bottom: 24px;
+}
+.formulario .form-container .submit {
+  background-color: white;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
+.formulario .form-container .submit:hover {
+  background-color: #43c7e7;
+}
+
+.fraseAbriTuLocal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.fraseAbriTuLocal h1 {
+  margin: 48px;
+  font-family: "Montserrat", sans-serif;
+}
+.fraseAbriTuLocal p {
+  width: 50%;
+  margin-bottom: 24px;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+}
+.fraseAbriTuLocal .ImagenAbriTuLocal {
+  margin: 32px;
+  width: 50%;
+  height: auto;
+}
+
+@media (min-width: 780px) {
+  .navbar {
+    grid-template-columns: auto 1fr auto auto;
+    grid-template-areas: "logo-chui . navbar-top redes";
+    justify-content: center;
+    align-items: center;
+  }
+  .navbar .navbar-top {
+    grid-area: navbar-top;
+    display: flex;
+    background-color: #ebe6e4;
+  }
+  .navbar .navbar-top nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .navbar .navbar-top ul {
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .navbar .navbar-top li {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    margin-right: 18px;
+  }
+  .navbar .navbar-top li:hover {
+    cursor: pointer;
+  }
+  .navbar .navbar-top li:after {
+    display: block;
+    content: "";
+    border-bottom: solid 3px #43c7e7;
+    transform: scaleX(0);
+    transition: transform 250ms ease-in-out;
+  }
+  .navbar .navbar-top li:hover:after {
+    transform: scaleX(1);
+  }
+  .navbar .navbar-top li a {
+    text-decoration: none;
+    color: grey;
+  }
+  .navbar .redes-navbar {
+    display: flex;
+    flex-direction: row;
+    grid-area: redes;
+  }
+  .navbar .redes-navbar a {
+    text-decoration: none;
+  }
+  .navbar .redes-navbar img {
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
+  }
+  .navbar .logo-chuii {
+    grid-area: logo-chui;
+    padding-left: 12px;
+  }
+  .navbar .logo-chuii img {
+    width: 100px;
+    height: 100px;
+  }
+  .navbar .menu-icon {
+    display: none;
+  }
+}/*# sourceMappingURL=style.css.map */
